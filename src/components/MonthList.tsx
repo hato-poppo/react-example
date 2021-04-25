@@ -1,12 +1,13 @@
 import React from "react";
-import MenuItem from "@material-ui/core/MenuItem";
-import { FormControl, InputLabel, Select } from "@material-ui/core";
+import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 
 type Props = {
   onChange?: any;
 };
 
-const MonthList: React.FC<Props> = ({ onChange }) => {
+const MonthList: React.FC<Props> = ({
+  onChange,
+}) => {
   const month = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const items = month.map((x: number) => {
     return { value: x, text: x };

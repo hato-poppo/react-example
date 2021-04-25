@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MenuItem from "@material-ui/core/MenuItem";
-import { Select, FormControl, InputLabel } from "@material-ui/core";
+import { Select, FormControl, InputLabel, MenuItem } from "@material-ui/core";
 
 type Props = {
   year: number,
@@ -19,7 +18,10 @@ const firstDay = 1;
 const getMonthDays = (from: number, to: number): number[] =>
   [...Array(to - from + firstDay)].map((_, i) => from + i);
 
-const DayList: React.FC<Props> = ({ year, month }) => {
+const DayList: React.FC<Props> = ({
+  year,
+  month,
+}) => {
   const lastDay = getLastDay(year, month);
   const defaultItem = { value: 1, text: 1 };
 

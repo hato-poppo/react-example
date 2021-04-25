@@ -1,8 +1,9 @@
 {
     "include": [
-        "./src/**/*"
+        "src" // ./src/**/*
     ],
     "compilerOptions": {
+        "baseUrl": "src",
         "strict": true,
         "esModuleInterop": true,
         "lib": [

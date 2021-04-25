@@ -1,12 +1,13 @@
 import React from "react";
-import MenuItem from "@material-ui/core/MenuItem";
-import { FormControl, InputLabel, Select } from "@material-ui/core";
+import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 
 type Props = {
   onChange?: any;
 };
 
-const MonthList: React.FC<Props> = ({ onChange }) => {
+const YearList: React.FC<Props> = ({
+  onChange,
+}) => {
   const years = [2015, 2016, 2017, 2018, 2019, 2020, 2021];
   const items = years.map((x: number) => {
     return { value: x, text: x };
@@ -14,7 +15,7 @@ const MonthList: React.FC<Props> = ({ onChange }) => {
 
   return (
     <FormControl>
-      <InputLabel>Month</InputLabel>
+      <InputLabel>Year</InputLabel>
       <Select
         onChange={onChange}
         defaultValue={2021}
@@ -42,4 +43,4 @@ const MonthList: React.FC<Props> = ({ onChange }) => {
 // →自分の外側に関しては自分が認識出来ない範囲なので、汎用性を下げたり外側でトリッキーな指定をする羽目になってしまうので
 // 例：　自ファイル内の最上位コンポーネントに marginを付与
 // 呼び出し元のファイル（親コンポーネントが指定するべき）
-export default MonthList;
+export default YearList;
