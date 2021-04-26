@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import MenuItem from "@material-ui/core/MenuItem";
-import { Select, FormControl, InputLabel } from "@material-ui/core";
+import React from "react";
+import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 
 export type ListItem = {
   value: string | number,
@@ -8,12 +7,14 @@ export type ListItem = {
 }
 
 type Props = {
+  label?: string,
   value: string | number,
-  items: any,
-  onChangeHandler: any,
+  items: ListItem[],
+  onChangeHandler(): void,
 };
 
 const BaseSelect: React.FC<Props> = ({
+  label,
   value,
   items,
   onChangeHandler
@@ -21,7 +22,7 @@ const BaseSelect: React.FC<Props> = ({
 
   return (
     <FormControl>
-      <InputLabel>Day</InputLabel>
+      <InputLabel>{label}</InputLabel>
       <Select
         value={value}
         onChange={onChangeHandler}

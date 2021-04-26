@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Select, FormControl, InputLabel, MenuItem } from "@material-ui/core";
+import BaseSelect from 'components/base/BaseSelect';
 
 type Props = {
   year: number,
@@ -42,14 +42,12 @@ const DayList: React.FC<Props> = ({
   };
 
   return (
-    <FormControl>
-      <InputLabel>Day</InputLabel>
-      <Select value={value} onChange={onChangeDayHandler}>
-        {items.map((x: any) => {
-          return <MenuItem key={x.value} value={x.value}>{x.text}</MenuItem>;
-        })}
-      </Select>
-    </FormControl>
+    <BaseSelect
+      label={'Day'}
+      value={value}
+      items={items}
+      onChange={onChangeDayHandler}
+    />
   );
 };
 

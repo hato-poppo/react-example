@@ -18,7 +18,7 @@ const MonthList: React.FC<Props> = ({
       <InputLabel>Month</InputLabel>
       <Select
         onChange={onChange}
-        defaultValue={1}
+        value={1}
       >
         {items.map((x: number) => {
           return <MenuItem key={x.value} value={x.value}>{x.text}</MenuItem>;
